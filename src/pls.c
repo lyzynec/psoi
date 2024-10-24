@@ -1,9 +1,7 @@
 #include "pls.h"
 #include <assert.h>
-#include <math.h>
 
-#define MAX(a, b) ((a) > (b) ? (a) : (b))
-#define MIN(a, b) ((a) < (b) ? (a) : (b))
+#include "genmath.h"
 
 /**
  * @brief Compute the breakpoints of a line segment.

@@ -1,9 +1,7 @@
 #include "vector.h"
 #include <string.h>
-#include <math.h>
 
-#define MAX(a, b) ((a) > (b) ? (a) : (b))
-#define MIN(a, b) ((a) < (b) ? (a) : (b))
+#include "../genmath.h"
 
 int vector_set(
     PSOI_FLOAT *const vector,
@@ -130,7 +128,7 @@ int vector_euclid_norm(
         return -1;
     }
 
-    res_loc = sqrt(res_loc);
+    res_loc = FSQRT(res_loc);
 
     *result = res_loc;
 

@@ -2,8 +2,7 @@
 
 #include <assert.h>
 
-#define MAX(a, b) ((a) > (b) ? (a) : (b))
-#define MIN(a, b) ((a) < (b) ? (a) : (b))
+#include "genmath.h"
 
 int gradient(
     const PSOI_FLOAT *const H,
