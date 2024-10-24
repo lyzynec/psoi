@@ -1,6 +1,9 @@
 #include "vector.h"
 #include <string.h>
 
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+
 int vector_set(
     PSOI_FLOAT *const vector,
     size_t n,
@@ -99,6 +102,19 @@ int vector_dot(
     }
 
     *result = res_loc;
+
+    return 0;
+}
+
+int vector_saturate(
+    PSOI_FLOAT *const vector,
+    const PSOI_FLOAT *const upper,
+    const PSOI_FLOAT *const lower,
+    size_t n
+) {
+    for (size_t i = 0; i < n; i++) {
+        vector[i] = MAX(MIN(vector[i], upper[i]), lower[i]);
+    }
 
     return 0;
 }

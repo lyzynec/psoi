@@ -139,4 +139,21 @@ int vector_dot(
     PSOI_FLOAT *const result
 );
 
+/**
+ * @brief Bound the values of a vector.
+ * 
+ * @param vector The vector.
+ * @param upper The upper bound.
+ * @param lower The lower bound.
+ * @param n The size of the vector.
+ * 
+ * @return 0 on success, -1 on error.
+ */
+int vector_saturate(
+    PSOI_FLOAT *const vector,
+    const PSOI_FLOAT *const upper,
+    const PSOI_FLOAT *const lower,
+    size_t n
+);
+
 #endif // __PSOI_VECTOR_H__
