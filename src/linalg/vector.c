@@ -1,5 +1,6 @@
 #include "vector.h"
 #include <string.h>
+#include <math.h>
 
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
@@ -115,6 +116,23 @@ int vector_saturate(
     for (size_t i = 0; i < n; i++) {
         vector[i] = MAX(MIN(vector[i], upper[i]), lower[i]);
     }
+
+    return 0;
+}
+
+int vector_euclid_norm(
+    const PSOI_FLOAT *const vector,
+    size_t n,
+    PSOI_FLOAT *const result
+) {
+    PSOI_FLOAT res_loc = 0;
+    if (!vector_dot(vector, vector, n, &res_loc)) {
+        return -1;
+    }
+
+    res_loc = sqrt(res_loc);
+
+    *result = res_loc;
 
     return 0;
 }

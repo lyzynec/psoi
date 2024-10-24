@@ -156,4 +156,19 @@ int vector_saturate(
     size_t n
 );
 
+/**
+ * @brief Compute the euclidean norm of a vector.
+ * 
+ * @param vector The vector.
+ * @param n The size of the vector.
+ * @param result The result of the norm.
+ * 
+ * @return 0 on success, -1 on error.
+ */
+int vector_euclid_norm(
+    const PSOI_FLOAT *const vector,
+    size_t n,
+    PSOI_FLOAT *const result
+);
+
 #endif // __PSOI_VECTOR_H__
